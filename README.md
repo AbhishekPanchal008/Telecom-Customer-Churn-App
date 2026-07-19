@@ -3,8 +3,6 @@
 An AI-powered web application that predicts whether a telecom customer is likely to churn using a trained **XGBoost Machine Learning model**. The application provides an interactive dashboard, customer risk assessment, feature explainability, and personalized retention recommendations.
 
 
-# 📊 Telecom Customer Churn Prediction Dashboard
-
 [![Live Demo](https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit-success)](https://telecom-customer-churn-app-mcp5nhwrn3nhjzptjdoe2o.streamlit.app/)
 
 An AI-powered web application that predicts telecom customer churn using a trained XGBoost Machine Learning model.
