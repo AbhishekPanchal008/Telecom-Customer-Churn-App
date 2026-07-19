@@ -48,8 +48,8 @@ MEDIUM_RISK_THRESHOLD = 0.50
 
 # TODO: replace with the actual evaluation numbers from your notebook
 MODEL_METRICS = {
-    "Accuracy": "80.2%",
-    "ROC-AUC Score": "0.84",
+    "Accuracy": "79.82%",
+    "ROC-AUC Score": "0.840",
     "Algorithm": "XGBoost",
 }
 
