@@ -65,6 +65,14 @@ This project uses Machine Learning to identify customers who are likely to leave
 **Abhishek Panchal**
 
 
+## 🌐 Live Demo
+
+🚀 **Try the application here:**
+
+**https://telecom-customer-churn-app-mcp5nhwrn3nhjzptjdoe2o.streamlit.app/**
+
+
+
 ##  License
 
 This project is developed for educational and learning purposes.
