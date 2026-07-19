@@ -22,6 +22,13 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import joblib
+from pathlib import Path
+
+# Resolve paths relative to this script's own folder — not the process's
+# working directory. Streamlit Community Cloud runs the app with the repo
+# root as cwd, so a bare "best_xgboost_model.pkl" fails if app.py lives in
+# a subfolder. This makes it work regardless of where the script sits.
+BASE_DIR = Path(__file__).resolve().parent
 
 # =====================================================================
 # PAGE CONFIGURATION
@@ -157,14 +164,33 @@ def inject_custom_css():
 def load_artifacts():
     """Load the trained model and the training column schema."""
     try:
-        model = joblib.load("best_xgboost_model.pkl")
-        columns = joblib.load("columns.pkl")
-        return model, columns, None
-    except FileNotFoundError as e:
-        return None, None, f"Missing file: {e.filename}"
-    except Exception as e:
-        return None, None, f"Failed to load model artifacts: {e}"
+        # Debug information
+        st.write("📁 BASE_DIR:", BASE_DIR)
 
+        files = [f.name for f in BASE_DIR.iterdir()]
+        st.write("📂 Files found in app folder:", files)
+
+        model_path = BASE_DIR / "best_xgboost_model.pkl"
+        columns_path = BASE_DIR / "columns.pkl"
+
+        st.write("🔍 Looking for model at:", model_path)
+        st.write("🔍 Model exists:", model_path.exists())
+        st.write("🔍 Columns exists:", columns_path.exists())
+
+        model = joblib.load(model_path)
+        columns = joblib.load(columns_path)
+
+        return model, columns, None
+
+    except FileNotFoundError as e:
+        return None, None, (
+            f"Missing file: {e.filename}\n\n"
+            f"BASE_DIR: {BASE_DIR}\n"
+            f"Files found: {[f.name for f in BASE_DIR.iterdir()]}"
+        )
+
+    except Exception as e:
+        return None, None, f"Failed to load model artifacts:\n{e}"
 
 # =====================================================================
 # HEADER
@@ -532,8 +558,8 @@ def render_footer():
         """
         <div class="app-footer">
             Developed by Abhishek Panchal<br>
-           
-           
+            Diploma in Computer Engineering &amp; IoT<br>
+            Machine Learning Project using XGBoost
         </div>
         """,
         unsafe_allow_html=True,
