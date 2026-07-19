@@ -537,8 +537,7 @@ def render_footer():
         """
         <div class="app-footer">
             Developed by Abhishek Panchal<br>
-            Diploma in Computer Engineering &amp; IoT<br>
-            Machine Learning Project using XGBoost
+    
         </div>
         """,
         unsafe_allow_html=True,
