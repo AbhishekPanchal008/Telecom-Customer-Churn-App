@@ -90,7 +90,7 @@ Explore the interactive dashboard to:
 ![Dashboard](images/dashboard-home.png)
 
 
-### 📈 Feature Importance
+### 📈 Feature Importance & Prediction Result
 ![Feature Importance](images/feature-importance.png)
 
 
