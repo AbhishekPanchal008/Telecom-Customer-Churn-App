@@ -84,6 +84,16 @@ Explore the interactive dashboard to:
 - Download prediction summaries
 
 
+## 📸 Application Screenshots
+
+### 🏠 Dashboard
+![Dashboard](images/dashboard-home.png)
+
+
+### 📈 Feature Importance
+![Feature Importance](images/feature-importance.png)
+
+
 
 ##  License
 
