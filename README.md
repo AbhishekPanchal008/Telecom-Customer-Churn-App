@@ -94,6 +94,18 @@ Explore the interactive dashboard to:
 ![Feature Importance](images/feature-importance.png)
 
 
+## 🚀 Run Locally
+
+```bash
+git clone https://github.com/AbhishekPanchal008/Telecom-Customer-Churn-App.git
+
+cd Telecom-Customer-Churn-App
+
+pip install -r requirements.txt
+
+streamlit run Telecom-Customer-Churn-App/app.py
+```
+
 
 ##  License
 
